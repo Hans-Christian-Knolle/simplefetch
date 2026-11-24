@@ -9,6 +9,9 @@ project(simplefetch
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
+# Write build/compile_commands.json so clangd (Zed) resolves the include paths.
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Every .c file under src/include is part of the build. CONFIGURE_DEPENDS makes
 # CMake re-scan on each build, so new files are picked up without editing this
 # file.

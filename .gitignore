@@ -55,6 +55,7 @@ perf.data*
 *~
 .clangd/
 .cache/
+.clangd
 
 # OS metadata
 .DS_Store
