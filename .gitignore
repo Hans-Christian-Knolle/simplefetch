@@ -1,0 +1,66 @@
+# Build output
+build/
+bin/
+out/
+
+# Local backups
+backup/
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+# CMake / Make artifacts
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.cmake
+compile_commands.json
+
+# Autotools / configure artifacts
+config.log
+config.status
+autom4te.cache/
+.deps/
+.libs/
+*.lo
+*.la
+
+# Debug / profiling artifacts
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+vgcore.*
+core
+core.*
+perf.data*
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.clangd/
+.cache/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Environment / local files
+.env
+*.local
+__pycache__
