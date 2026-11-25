@@ -1,6 +1,7 @@
 #ifndef SHOW_INFO_H
 #define SHOW_INFO_H
 
+#include <stddef.h>
 #include <stdint.h>
 
 #include "config.h"
@@ -16,6 +17,6 @@ typedef struct {
     MEMInfo mem_info;
 } Info;
 
-uint8_t show_info(const Info *info, const Config *config);
+uint8_t show_info(const Info *info, const Config *config, const size_t info_count);
 
 #endif

@@ -58,9 +58,6 @@ typedef struct
     const char *username;
     const char *hostname;
     const char *home_directory;
-
-    uint uid;
-    uint gid;
 } USERInfo;
 
 // Fetch functions

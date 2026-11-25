@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -7,7 +8,7 @@
 #include "fetch/fetch.h"
 #include "info.h"
 
-// This is the config. The programm need to be recompiled if config is changed
+// This is the config. The programm needs to be recompiled if config is changed
 // I am not into json libraries yet. Probably will implement that later
 static const Order order[] = {
     USER_INFO,
@@ -21,11 +22,11 @@ static const Order order[] = {
 static const Config config = {
     .order = order,
     .show_user_info = true,
-    .show_os_info = true,
-    .show_env_info = true,
-    .show_cpu_info = true,
-    .show_gpu_info = true,
-    .show_mem_info = true
+    .show_os_info   = true,
+    .show_env_info  = true,
+    .show_cpu_info  = true,
+    .show_gpu_info  = true,
+    .show_mem_info  = true
 };
 
 int main(int argc, char *argv[]) {
@@ -44,12 +45,14 @@ int main(int argc, char *argv[]) {
 
     Info info = {
         .user_info = fetchUSERInfo(),
-        .os_info = fetchOSInfo(),
-        .env_info = fetchENVInfo(),
-        .cpu_info = fetchCPUInfo(),
-        .gpu_info = fetchGPUInfo(),
-        .mem_info = fetchMEMInfo()
+        .os_info   = fetchOSInfo(),
+        .env_info  = fetchENVInfo(),
+        .cpu_info  = fetchCPUInfo(),
+        .gpu_info  = fetchGPUInfo(),
+        .mem_info  = fetchMEMInfo()
     };
 
-    return show_info(&info, &config);
+    size_t info_count = sizeof(order) / sizeof(order[0]);
+
+    return show_info(&info, &config, info_count);
 }
